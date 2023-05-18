@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/backgroundImg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recepcion">
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="114dp"
+        android:layout_height="103dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="377dp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progresbar"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scTipoOrden"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toStartOf="@+id/depositoR"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarThumbVertical="@drawable/linea"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycerId8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:visibility="visible"
+                app:cornerRadius="20dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/p1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="#676262"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/QTMtitulo5"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:text="QTM - PROCESOS LOGISTICOS"
+        android:textColor="@color/colorQuantum"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        style="@style/srcQuantumBackground"
+        android:layout_width="112dp"
+        android:layout_height="124dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="17dp"
+        android:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ListaRecepcion"
+        android:layout_width="364dp"
+        android:layout_height="277dp"
+        android:layout_below="@+id/destinoDeposito"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="14dp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="135dp"
+        android:background="@drawable/ic_borde2"
+        android:onClick="Salir"
+        android:text="VOLVER"
+        android:textColor="@color/colorQuantumLila" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/QTMtitulo5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="RECEPCIÓN"
+        android:textColor="@color/colorQuantum"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/viewNombre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/viewNombre5"
+        android:layout_alignParentStart="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/nroPedidoR"
+        android:gravity="center"
+        android:text="Número de Pedido"
+        android:textColor="@color/colorQuantum" />
+
+    <EditText
+        android:id="@+id/nroPedidoR"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/depositoR"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_borde4"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:textColor="@color/textColor" />
+
+
+    <TextView
+        android:id="@+id/viewNombre4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/nroPedidoR"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/tiPedidoR"
+        android:gravity="center"
+        android:text="Tipo de Pedido"
+        android:textColor="@color/colorQuantum"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/viewNombre5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/scTipoOrden"
+        android:gravity="center"
+        android:text="Deposito"
+        android:textColor="@color/colorQuantum"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/tiPedidoR"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/nroPedidoR"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_borde4"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:textColor="@color/textColor" />
+
+
+    <EditText
+        android:id="@+id/depositoR"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_borde4"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:textColor="@color/textColor" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="135dp"
+        android:background="@drawable/custom_button3"
+        android:onClick="RecepcionColectar"
+        android:text="Recepcionar" />
+
+</RelativeLayout>
