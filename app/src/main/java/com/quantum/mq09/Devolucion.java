@@ -1,8 +1,8 @@
 package com.quantum.mq09;
 
-import static com.quantum.mq09.Configuracion.depositoGlobal;
-import static com.quantum.mq09.Configuracion.direc;
-import static com.quantum.mq09.Configuracion.tipoDevolucionGlobal;
+import static com.quantum.mq09.LoginActivity.depositoGlobal;
+import static com.quantum.mq09.LoginActivity.direc;
+import static com.quantum.mq09.LoginActivity.tipoDevolucionGlobal;
 import static com.quantum.mq09.Despacho.LimpiezaGlobal;
 import static com.quantum.mq09.LoginActivity.contraseñaGlobal;
 import static com.quantum.mq09.LoginActivity.usuarioGlobal;

@@ -21,7 +21,7 @@ import com.quantum.database.DbHelper;
 
 public class Configuracion extends AppCompatActivity {
 
-    private TextView direccion,devolucion,recepcion,tipoDevolucion,tipoRecepcion,qtm, despacho,movimiento,deposito,CBD,baseD;
+  /*  private TextView direccion,devolucion,recepcion,tipoDevolucion,tipoRecepcion,qtm, despacho,movimiento,deposito,CBD,baseD;
 
     public static String direc = null;
     public static String  despachoGlobal = null;
@@ -34,8 +34,6 @@ public class Configuracion extends AppCompatActivity {
     public static String  movimientoGlobal = null;
     public static String  depositoGlobal = null;
     public static int  base = 0;
-
-
     public static boolean  checkGlobalLector = true;
     private CheckBox  ckbxLector;
 
@@ -44,13 +42,14 @@ public class Configuracion extends AppCompatActivity {
     private static  boolean  CDBnormal= true;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
 
         direccion= findViewById(R.id.direccion);
-
         despacho= findViewById(R.id.despachoVersion);
         devolucion= findViewById(R.id.devolucion);
         recepcion= findViewById(R.id.versionRecepcion);
@@ -197,5 +196,5 @@ public class Configuracion extends AppCompatActivity {
         }else{
             Toast.makeText(Configuracion.this, "ERROR", Toast.LENGTH_LONG).show();
         }
-    }
+    }*/
 }

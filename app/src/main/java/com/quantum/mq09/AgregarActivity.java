@@ -1,7 +1,8 @@
 package com.quantum.mq09;
 
-import static com.quantum.mq09.Configuracion.checkGlobalLector;
-import static com.quantum.mq09.Configuracion.despachoGlobal;
+import static com.quantum.mq09.LoginActivity.checkGlobalLector;
+import static com.quantum.mq09.LoginActivity.despachoGlobal;
+import static com.quantum.mq09.LoginActivity.handHeldGlobal;
 import static com.quantum.mq09.SegundoActivity.progres;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,16 +41,8 @@ public class AgregarActivity extends AppCompatActivity {
         idMostrar = findViewById(R.id.idMos);
         qrInfo = findViewById(R.id.pallet);
         colectado = findViewById(R.id.colectado);
-
         pallet .requestFocus();
 
-        if(checkGlobalLector != false){
-            colectado.setVisibility(View.VISIBLE);
-        }else if (checkGlobalLector != true){
-            colectado.setVisibility(View.INVISIBLE);
-        }else{
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
-        }
 
         //mostrar
         if(despachoGlobal != null){
@@ -65,14 +58,22 @@ public class AgregarActivity extends AppCompatActivity {
         }
         progres =0;
 
+        if(handHeldGlobal){
+            Toast.makeText(this, "activado handheld", Toast.LENGTH_LONG).show();
+        }
         //para agregar instantaneo
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
+        Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
             @Override
             public void run() {
-                agregar2();
+                //handheld
+                if(handHeldGlobal){
+                    agregar3();
+                }else{
+                    progres =0;
+                };
             }
-        }, 0, 5000);
+        }, 0, 3000);
     }
     //scaner
     public void scan(View v){
@@ -177,6 +178,37 @@ public class AgregarActivity extends AppCompatActivity {
         }else{
             Toast.makeText(AgregarActivity.this, "cargue al menos pallet", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void agregar3( ){
+
+        if(pallet.length() !=0){
+            if ( pallet.length() == 0  ){
+                Toast.makeText(AgregarActivity.this, "ERROR AL GUARDAR REGISTRO", Toast.LENGTH_SHORT).show();
+            }else if(pallet.length() != 0  ){
+                String palletString2 = pallet.getText().toString();
+                String palletString = palletString2.replace(" ", "");
+                colectado.setText(palletString);
+                if(checkGlobalLector && pallet.length() > 20){
+                    String subcadena = palletString.substring(10, 20);
+                    colectado.setText(subcadena);
+                  //  Toast.makeText(AgregarActivity.this, "REGISTRO GUARDADO" , Toast.LENGTH_SHORT).show();
+                    DbContactos dbContactos = new DbContactos(AgregarActivity.this);
+                    long id  =dbContactos.insertaContacto("ejemplo",item.getText().toString(),  colectado.getText().toString(),"Pending");
+                }else if (!checkGlobalLector){
+                    pallet.setText(palletString);
+                   // Toast.makeText(AgregarActivity.this, "REGISTRO GUARDADO" , Toast.LENGTH_SHORT).show();
+                    DbContactos dbContactos = new DbContactos(AgregarActivity.this);
+                    long id  =dbContactos.insertaContacto("ejemplo",item.getText().toString(),  pallet.getText().toString(),"Pending");
+                }else{
+                    limpiar();
+                }
+                limpiar();
+            }else{
+                Toast.makeText(AgregarActivity.this, "cargue al menos pallet", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 
     //limpia los textViews de item y serie

@@ -1,12 +1,12 @@
 package com.quantum.database;
 
-import static com.quantum.mq09.Configuracion.depositoGlobal;
-import static com.quantum.mq09.Configuracion.despachoGlobal;
-import static com.quantum.mq09.Configuracion.devolucionGlobal;
-import static com.quantum.mq09.Configuracion.direc;
-import static com.quantum.mq09.Configuracion.movimientoGlobal;
-import static com.quantum.mq09.Configuracion.recepcionGlobal;
-import static com.quantum.mq09.Configuracion.tipoDevolucionGlobal;
+import static com.quantum.mq09.LoginActivity.depositoGlobal;
+import static com.quantum.mq09.LoginActivity.despachoGlobal;
+import static com.quantum.mq09.LoginActivity.devolucionGlobal;
+import static com.quantum.mq09.LoginActivity.direc;
+import static com.quantum.mq09.LoginActivity.movimientoGlobal;
+import static com.quantum.mq09.LoginActivity.recepcionGlobal;
+import static com.quantum.mq09.LoginActivity.tipoDevolucionGlobal;
 import static com.quantum.mq09.Despacho.despachoNumeroConfirmadoGlobal;
 import static com.quantum.mq09.Devolucion.devolucionNumeroConfirmadoGlobal;
 import static com.quantum.mq09.LoginActivity.contraseñaGlobal;
@@ -202,7 +202,6 @@ public class DbContactos extends DbHelper{
                                     LimpiezaGlobal=1;
                                     progres = 1;
 
-
                                 }else if (estado.equals("ERROR")){
                                     editarContacto(idInt, ItemString,palletString,"Error") ;
                                     Toast.makeText(context," Completado pero con errores"  ,Toast.LENGTH_SHORT).show();
@@ -210,12 +209,12 @@ public class DbContactos extends DbHelper{
                                     LimpiezaGlobal=1;
                                     progres = 1;
 
-
                                 }else{
                                     Toast.makeText(context,"  errores"  ,Toast.LENGTH_SHORT).show();
 
                                 }
                             }
+
                             @Override
                             public void onFailure(Call<Respuesta> call, Throwable t) {
                                 Toast.makeText(context,"No se conectó",Toast.LENGTH_SHORT).show();

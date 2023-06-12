@@ -14,7 +14,6 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String  DATABASE_NOMBRE = "tabla.db";
     public  static  final String TABLE= "t_tabla";
 
-
     public DbHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
     }

@@ -1,10 +1,13 @@
 package com.quantum.mq09;
 
-import static com.quantum.mq09.Configuracion.despachoGlobal;
+import static com.quantum.mq09.LoginActivity.despachoGlobal;
 import static com.quantum.mq09.Despacho.LimpiezaGlobal;
+import static com.quantum.mq09.LoginActivity.visible;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +16,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -68,30 +73,11 @@ public class SegundoActivity extends AppCompatActivity {
         listaContactos =  findViewById(R.id.listaContactos);
         listaContactos.setLayoutManager(new LinearLayoutManager(this));
 
-        /*new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (progres == 0 ){
-                    despacho.setVisibility(View.INVISIBLE);
-                    colectar.setVisibility(View.VISIBLE);
-                    movimiento.setVisibility(View.VISIBLE);
-                    devolucion.setVisibility(View.VISIBLE);
-                    recepcion.setVisibility(View.VISIBLE);
-                }
-                actualizar2();
-            }
-        }, 9000);
-         actualizar2();
 
-        if (progres == 1 ) {
-            progresBar.setVisibility(View.VISIBLE);
-            despacho.setVisibility(View.INVISIBLE);
-            colectar.setVisibility(View.INVISIBLE);
-            movimiento.setVisibility(View.INVISIBLE);
-            devolucion.setVisibility(View.INVISIBLE);
-            recepcion.setVisibility(View.INVISIBLE);
-            progres= 0;
-        }*/
+        //Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //llamado de la clase para mostrar objetos
         DbContactos dbContactos = new DbContactos(SegundoActivity.this);
@@ -185,6 +171,35 @@ public class SegundoActivity extends AppCompatActivity {
                 progresBar.setVisibility(View.VISIBLE);
             }
         });
+    }
+    //menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu2, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //acciones de menu
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.action_sesion:
+
+                Intent siguiente = new Intent(SegundoActivity.this, LoginActivity.class);
+                startActivity(siguiente);
+
+                visible = "1";
+                break;
+
+            case R.id.action_configuracion:
+                Intent siguiente2 = new Intent(SegundoActivity.this, LoginActivity.class);
+                visible = "2";
+                startActivity(siguiente2);
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void limpiezaAutomatica(){
