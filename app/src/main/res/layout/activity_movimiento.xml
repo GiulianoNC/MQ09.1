@@ -175,7 +175,7 @@
         android:layout_marginEnd="34dp"
         android:layout_toStartOf="@+id/scTipoOrden"
         android:gravity="center"
-        android:text="Deposito Origen"
+        android:text="Depósito Origen"
         android:textColor="@color/colorQuantum" />
 
     <EditText
@@ -203,7 +203,7 @@
         android:layout_marginEnd="34dp"
         android:layout_toStartOf="@+id/tp"
         android:gravity="center"
-        android:text="Deposito Destino"
+        android:text="Depósito Destino"
         android:textColor="@color/colorQuantum"
         android:visibility="visible" />
 

@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout5"
     style="@style/backgroundImg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Devolucion">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
         style="?android:attr/progressBarStyle"
         android:layout_width="114dp"
         android:layout_height="103dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="377dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:indeterminate="true"
         android:indeterminateDrawable="@drawable/progresbar"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/viewNombre4" />
 
     <ScrollView
         android:id="@+id/scTipoOrden"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/textView6"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="21dp"
-        android:layout_toStartOf="@+id/depositoDev"
         android:fadeScrollbars="false"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarFadeDuration="0"
         android:scrollbarThumbVertical="@drawable/linea"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/depositoDev"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -71,47 +78,45 @@
         style="@style/srcQuantumBackground"
         android:layout_width="112dp"
         android:layout_height="124dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="17dp"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ListaDevolucion"
         android:layout_width="364dp"
         android:layout_height="277dp"
-        android:layout_below="@+id/tiPedidoD"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="-132dp"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiPedidoD" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/ic_borde2"
         android:onClick="Salir"
         android:text="VOLVER"
-        android:textColor="@color/colorQuantumLila" />
+        android:textColor="@color/colorQuantumLila"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/imageView8" />
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -120,129 +125,125 @@
         android:id="@+id/qtm4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="9dp"
         android:fontFamily="@font/roboto"
         android:textColor="@color/colorQuantum"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/roboto"
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="DEVOLUCIÓN"
         android:textColor="@color/colorQuantum"
         android:textSize="23sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/viewNombre"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/viewNombre7"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@+id/nroPedidoD"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Número de Pedido"
-        android:textColor="@color/colorQuantum" />
+        android:textColor="@color/colorQuantum"
+        app:layout_constraintEnd_toStartOf="@+id/nroPedidoD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewNombre7" />
 
     <EditText
         android:id="@+id/nroPedidoD"
         android:layout_width="180dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/depositoDev"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/ic_borde4"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:textColor="@color/textColor" />
+        android:textColor="@color/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depositoDev" />
 
 
     <TextView
         android:id="@+id/viewNombre4"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nroPedidoD"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@+id/tiPedidoD"
         android:gravity="center"
         android:text="Tipo de Pedido"
         android:textColor="@color/colorQuantum"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/tiPedidoD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nroPedidoD" />
 
     <TextView
         android:id="@+id/viewNombre7"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="6dp"
-        android:layout_toStartOf="@+id/scTipoOrden"
         android:gravity="center"
-        android:text="Deposito"
+        android:text="Depósito"
         android:textColor="@color/colorQuantum"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/scTipoOrden"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/tiPedidoD"
         android:layout_width="180dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/nroPedidoD"
-        android:layout_alignParentEnd="true"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/ic_borde4"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:textColor="@color/textColor" />
+        android:textColor="@color/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nroPedidoD" />
 
 
     <EditText
         android:id="@+id/depositoDev"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/ic_borde4"
         android:gravity="center"
-        android:hint="deposito"
+        android:hint="Depósito"
         android:inputType="textPersonName"
         android:textColor="@color/textColor"
-        android:textColorHint="@color/colorQuantum" />
+        android:textColorHint="@color/colorQuantum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/custom_button3"
         android:onClick="DevolucionColectar"
-        android:text="DevoluciÓn" />
+        android:text="DevoluciÓn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView8" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

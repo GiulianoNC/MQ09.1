@@ -15,6 +15,13 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30" />
+
     <TextView
         android:id="@+id/handText"
         android:layout_width="wrap_content"
@@ -63,7 +70,7 @@
         style="@style/SolLuna"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHeight_percent="0.05"
         app:layout_constraintStart_toEndOf="@+id/btnToggleDark"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -76,7 +83,7 @@
         android:layout_height="0dp"
         android:fontFamily="@font/roboto"
         android:textColor="@color/colorQuantum"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHeight_percent="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
@@ -104,10 +111,11 @@
         android:id="@+id/QTMtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
         android:fontFamily="@font/roboto"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/dir"
@@ -120,7 +128,7 @@
         android:id="@+id/configuracion"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.7"
@@ -228,6 +236,7 @@
                 android:id="@+id/versionRecepcion2"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/ic_borde"
                 android:gravity="center"
                 android:inputType="textPersonName"
@@ -258,7 +267,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Version Movimiento"
+                android:text="Versión Movimiento"
                 android:textColor="@color/colorQuantum"
                 android:textSize="15sp"
                 android:visibility="visible" />
@@ -282,6 +291,7 @@
                 android:id="@+id/versionMovimiento2"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/ic_borde"
                 android:gravity="center"
                 android:inputType="textPersonName"
@@ -336,6 +346,7 @@
                 android:id="@+id/tipoRecepecion2"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/ic_borde"
                 android:gravity="center"
                 android:inputType="textPersonName"
@@ -376,7 +387,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="HandelHeld"
+                android:text="Handheld"
                 android:textColor="@color/colorQuantum"
                 android:textSize="15sp"
                 android:visibility="visible" />
@@ -391,8 +402,8 @@
                 android:id="@+id/checkBoxLector3"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
                 android:background="@drawable/ic_borde4"
                 android:button="@drawable/image_checkbox"
                 android:foregroundGravity="center"
@@ -403,8 +414,8 @@
                 android:id="@+id/handHeld"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
                 android:background="@drawable/ic_borde4"
                 android:button="@drawable/image_checkbox"
                 android:foregroundGravity="center"
@@ -437,7 +448,7 @@
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_marginTop="40dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
@@ -559,11 +570,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="30dp"
         android:fontFamily="@font/roboto"
         android:text="Versión 2.0"
         android:textColor="@color/colorQuantum"
         android:textSize="10sp"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
